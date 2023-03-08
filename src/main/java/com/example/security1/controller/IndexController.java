@@ -4,6 +4,8 @@ import com.example.security1.dto.UserDto;
 import com.example.security1.service.IndexService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,20 +30,20 @@ public class IndexController {
         return "index";
     }
 
-    @ResponseBody
     @GetMapping("/user")
+    @ResponseBody
     public String user() {
         return "user";
     }
 
-    @ResponseBody
     @GetMapping("/admin")
+    @ResponseBody
     public String admin() {
         return "admin";
     }
 
-    @ResponseBody
     @GetMapping("/manager")
+    @ResponseBody
     public String manager() {
         return "manager";
     }
@@ -69,6 +71,20 @@ public class IndexController {
         indexService.join(dto);
 
         return "redirect:/loginForm";
+    }
+
+    @Secured("ROLE_ADMIN")
+    @GetMapping("/info")
+    @ResponseBody
+    public String info() {
+        return "개인정보";
+    }
+
+    @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+    @GetMapping("/data")
+    @ResponseBody
+    public String data() {
+        return "데이터 정보";
     }
 
 }
