@@ -1,7 +1,5 @@
 # Spring Security Basic V1
 
-<hr>
-
 ## MySQL DB 및 사용자 생성
 ````sql
 create user 'cos'@'%' identified by 'cos1234';
