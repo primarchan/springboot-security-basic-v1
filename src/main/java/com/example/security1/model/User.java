@@ -1,8 +1,8 @@
 package com.example.security1.model;
 
 import com.example.security1.dto.UserDto;
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
@@ -13,6 +13,7 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class User {
 
     @Id  // primary key
