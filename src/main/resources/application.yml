@@ -13,8 +13,11 @@ spring:
     url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
     username: cos
     password: cos1234
+  devtools:
+    livereload:
+      enabled: true
 
-# ?? Template Engine ?? Mustache ?? ? ?? ??
+  # ?? Template Engine ?? Mustache ?? ? ?? ??
 #  mvc:
 #    view:
 #      prefix: /templates/
