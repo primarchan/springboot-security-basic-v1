@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### application.yml ###
-.yml
+*.yml
 application.yml
 application-oauth2-client.yml
