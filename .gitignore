@@ -33,5 +33,6 @@ build/
 .vscode/
 
 ### application.yml ###
-!**/src/main/resources/application.yml
-!**/src/main/resources/application-oauth2-client.yml
+.yml
+application.yml
+application-oauth2-client.yml
