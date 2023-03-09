@@ -28,6 +28,9 @@ public class User {
 
     private String role;  // ROLE_USER, ROLE_ADMIN
 
+    private String provider;
+    private String providerId;
+
     @CreationTimestamp
     private Timestamp createDate;
 
@@ -36,6 +39,8 @@ public class User {
         this.password = dto.getPassword();
         this.email = dto.getEmail();
         this.role = dto.getRole();
+        this.provider = dto.getProvider();
+        this.providerId = dto.getProviderId();
     }
 
 
