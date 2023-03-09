@@ -31,7 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/loginForm")
                 .loginProcessingUrl("/login")  // "/login" URL 이 호출이 되면 Security 에서 낚아채서 로그인 진행 처리
-                .defaultSuccessUrl("/");
+                .defaultSuccessUrl("/")
+                .and()
+                .oauth2Login()
+                .loginPage("/loginForm");  // Google 로그인이 완료된 뒤에 후처리 필요
     }
 
 }
